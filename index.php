@@ -9,13 +9,58 @@
 				<div class="logo"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png"></div>
 				<!-- humberger menu -->
 				<div id="toggle" class="js-hamburger hamburger">
-				<span></span>
+					<span></span>
 			 	</div>
 			</div>
-			<picture class="p-1">
-				<source srcset="<?php echo get_template_directory_uri(); ?>/img/visual_1_sp.png" media="(max-width :767px)" />
-				<img class="nightviwe" src="<?php echo get_template_directory_uri(); ?>/img/visual_1_pc.png" alt="アメリカンビレッジの画像">
-			</picture>
+			<div class="viewer">
+				<ul class="viewcontent">
+					<li>
+						<picture class="p-1">
+							<source srcset="<?php echo get_template_directory_uri(); ?>/img/visual_1_sp.png" media="(max-width :767px)" />
+							<img class="nightviwe" src="<?php echo get_template_directory_uri(); ?>/img/visual_1_pc.png" alt="アメリカンビレッジロゴ文字" />
+						</picture>
+					</li>
+					<li>
+						<picture class="p-1">
+							<source srcset="<?php echo get_template_directory_uri(); ?>/img/visual_2_sp.png" media="(max-width :767px)" />
+							<img class="nightviwe" src="<?php echo get_template_directory_uri(); ?>/img/visual_2_pc.png" alt="アメリカンビレッジロゴ文字" />
+						</picture>
+					</li>
+					<li>
+						<picture class="p-1">
+							<source srcset="<?php echo get_template_directory_uri(); ?>/img/visual_3_sp.png" media="(max-width :767px)" />
+							<img class="nightviwe" src="<?php echo get_template_directory_uri(); ?>/img/visual_3_pc.png" alt="アメリカンビレッジロゴ文字" />
+						</picture>
+					</li>
+					<li>
+						<picture class="p-1">
+							<source srcset="<?php echo get_template_directory_uri(); ?>/img/visual_4_sp.png" media="(max-width :767px)" />
+							<img class="nightviwe" src="<?php echo get_template_directory_uri(); ?>/img/visual_4_pc.png" alt="アメリカンビレッジロゴ文字" />
+						</picture>
+					</li>
+					<li>
+						<picture class="p-1">
+							<source srcset="<?php echo get_template_directory_uri(); ?>/img/visual_5_sp.png" media="(max-width :767px)" />
+							<img class="nightviwe" src="<?php echo get_template_directory_uri(); ?>/img/visual_5_pc.png" alt="アメリカンビレッジロゴ文字" />
+						</picture>
+					</li>
+					<li>
+						<picture class="p-6">
+							<source srcset="<?php echo get_template_directory_uri(); ?>/img/visual_1_sp.png" media="(max-width :767px)" />
+							<img class="nightviwe" src="<?php echo get_template_directory_uri(); ?>/img/visual_6_pc.png" alt="アメリカンビレッジロゴ文字" />
+						</picture>
+					</li>
+					<li>
+						<picture class="p-1">
+							<source srcset="<?php echo get_template_directory_uri(); ?>/img/visual_7_sp.png" media="(max-width :767px)" />
+							<img class="nightviwe" src="<?php echo get_template_directory_uri(); ?>/img/visual_7_pc.png" alt="アメリカンビレッジロゴ文字" />
+						</picture>
+					</li>
+				</ul>
+
+
+			</div>
+			<!--/.viewer-->
 			<picture class="p-2">
 				<source srcset="<?php echo get_template_directory_uri(); ?>/img/visual_text_sp.png" media="(max-width :767px)" />
 				<img class="word" src="<?php echo get_template_directory_uri(); ?>/img/visual_text_pc.png" alt="フォントの画像">
