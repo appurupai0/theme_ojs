@@ -1,46 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php get_header(); ?>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>ojt</title>
 
-	<!-- css　ファイル -->
-	<link rel="stylesheet" href="css/style.css">
-
-</head>
-
-<body>
-	<!-- header -->
-	<header>
-		<div class="fixed">
-			<ul class="menulist">
-				<li class="menucontent">Menu01</li>
-				<li class="menucontent">Menu02</li>
-				<li class="menucontent">Menu03</li>
-				<li class="menucontent">Menu04</li>
-			</ul>
-		</div>
-
-		<!-- humberger menu -->
-		
-		
-
-	</header>
-	<!-- header ここまで -->
 
 	<!-- main -->
 	<main class="mainall">
 		<div class="mainviwe">
-			<div class="logo"><img src="img/logo.png"></div>
+			<div class="topcontent">
+				<div class="logo"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png"></div>
+				<!-- humberger menu -->
+				<div id="toggle" class="js-hamburger hamburger">
+				<span></span>
+			 	</div>
+			</div>
 			<picture class="p-1">
-				<source srcset="img/visual_1_sp.png" media="(max-width :767px)" />
-				<img class="nightviwe" src="img/visual_1_pc.png"/>
+				<source srcset="<?php echo get_template_directory_uri(); ?>/img/visual_1_sp.png" media="(max-width :767px)" />
+				<img class="nightviwe" src="<?php echo get_template_directory_uri(); ?>/img/visual_1_pc.png" alt="アメリカンビレッジの画像">
 			</picture>
 			<picture class="p-2">
-				<source srcset="img/visual_text_sp.png" media="(max-width :767px)" />
-				<img class="word" src="img/visual_text_pc.png" alt="">
+				<source srcset="<?php echo get_template_directory_uri(); ?>/img/visual_text_sp.png" media="(max-width :767px)" />
+				<img class="word" src="<?php echo get_template_directory_uri(); ?>/img/visual_text_pc.png" alt="フォントの画像">
 			</picture>	
 		</div>
 		<p class="village">進化し続ける「街」<br class="sp_br">アメリカンビレッジマガジン</p>
@@ -49,24 +27,30 @@
 	<!-- main ここまで -->
 
 	<!-- blog -->
-	<article>
+	<div class="blog">
 		<section>
+			<?php if(have_posts()): ?>
 			<h2 class="latest-article">Latest Article</h2>
 
 			<div class="bd-grid flex-box">
 
-
-				<div class="blog-content">
-					<picture>
-						<source srcset="" media="(max-width: 797px)" />
-						<img src="img/post_img_1.png" alt="">
-					</picture>
-					<p class="blog-time">2018/5/20</p>
-					<p class="blog-title">おしゃれカフェがありますよ</p>
-					<p class="blog-more">READ MORE</p>
+				<?php while (have_posts()): the_post(); ?>
+				<?php if ( !is_page() ): ?>
+				
+				
+				<div id="post-<?php the_ID(); ?>" class="blog-content">
+					<?php the_post_thumbnail(); ?>
+					<p class="blog-time"><?php the_time('Y年m月d日'); ?></p>
+					<p class="blog-title">
+						<a href="<?php the_permalink(); ?>" class="stylenone"><?php the_title(); ?></a>
+					</p>
+					<a class="blog-more" href="<?php the_permalink(); ?>">READ MORE</a>
 				</div>
 
-				<div class="blog-content">
+				<?php endif; ?>
+				<?php endwhile; ?>
+
+				<!-- <div class="blog-content">
 					<img src="img/post_img_2.png" alt="">
 					<p class="blog-time">2018/5/20</p>
 					<p class="blog-title">おしゃれカフェがありますよ</p>
@@ -99,29 +83,17 @@
 					<p class="blog-time">2018/5/20</p>
 					<p class="blog-title">おしゃれカフェがありますよ</p>
 					<p class="blog-more">READ MORE</p>
-				</div>
+				</div> -->
 
 
 			</div>
+			<?php else: ?>
+				<h2 class="latest-article">No Posts</h2>
+			<?php endif; ?>
 		</section>
-	</article>
+	</div>
 	<!-- blog ここまで -->
 
 
 
-	<!-- footer -->
-	<footer>
-		<!-- コピーライト -->
-		<div class="copylight">
-			Copyright ©︎ Shinohara.ALL RIGHTS RESERVED.
-		</div>
-
-	</footer>
-	<!-- footer ここまで -->
-
-	<!-- jQuery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="js/sample.js"></script>
-</body>
-
-</html>
+<?php get_footer(); ?>
